@@ -1,2 +1,75 @@
 @config '../../tailwind.config.js';
 @import 'tailwindcss';
+
+@layer components {
+  /* Typography */
+  .text-brand {
+    @apply text-[1.0625rem] font-semibold text-text;
+  }
+
+  .text-nav {
+    @apply text-sm font-medium;
+  }
+
+  .text-body {
+    @apply text-base text-text;
+  }
+
+  .text-caption {
+    @apply text-sm text-text-secondary;
+  }
+
+  /* Layout */
+  .container-app {
+    @apply mx-auto max-w-7xl px-4 md:px-6;
+  }
+
+  /* Links */
+  .link-brand {
+    @apply flex shrink-0 items-center gap-3 text-[1.0625rem] font-semibold text-text no-underline transition-colors hover:text-accent-indigo;
+  }
+
+  .nav-link {
+    @apply rounded-md px-3.5 py-2 text-sm font-medium text-text-secondary no-underline transition-colors hover:bg-bg-muted hover:text-text;
+  }
+
+  .nav-link--active {
+    @apply bg-accent-indigo/10 text-accent-indigo;
+  }
+
+  /* Buttons */
+  .btn--ghost {
+    @apply inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-semibold text-text-secondary transition-colors hover:bg-bg-muted hover:text-text;
+  }
+
+  .btn--secondary {
+    @apply inline-flex items-center justify-center rounded-md border border-border bg-bg-surface px-5 py-2.5 text-sm font-semibold text-text transition-colors hover:border-border-strong hover:bg-bg-muted;
+  }
+
+  .btn--primary {
+    @apply inline-flex items-center justify-center rounded-md bg-gradient-to-r from-accent-violet via-accent-indigo to-accent-blue px-5 py-2.5 text-sm font-semibold text-text-inverse shadow-sm transition-colors hover:shadow-md;
+  }
+
+  .btn--danger {
+    @apply inline-flex items-center justify-center rounded-md bg-rose-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-rose-700;
+  }
+
+  /* Status badges */
+  .status-badge {
+    @apply inline-flex w-[5rem] justify-center rounded-full px-2 py-0.5 text-xs font-semibold;
+  }
+
+  .status-badge--active {
+    border: 1px solid var(--color-status-active-border);
+    background: var(--color-status-active-bg);
+    padding-bottom: 4px;
+    color: var(--color-status-active-text);
+  }
+
+  .status-badge--inactive {
+    border: 1px solid var(--color-status-inactive-border);
+    background: var(--color-status-inactive-bg);
+    padding-bottom: 4px;
+    color: var(--color-status-inactive-text);
+  }
+}
